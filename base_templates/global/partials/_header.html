@@ -1,0 +1,21 @@
+{% load static %}
+<header class="p-3">
+
+    <div class="container">
+        <div class="row d-flex justify-content-between">
+            <a href="" class="col-4"><img src="{% static "global/images/logo-brasas.png" %}" width="100" alt=""></a>
+
+            <nav class="col-6 d-flex align-items-center justify-content-end">
+                <ul class="d-flex align-items-center justify-content-around w-100">
+                    <li class=""><a href="{% url 'service:about' %}">sobre</a></li>
+                    <li class=""><a href="{% url 'service:vision' %}">visao</a></li>
+                    <li class=""><a href="{% url 'service:services' %}">cultos</a></li>
+                    <li class=""><a href="{% url 'service:calendar' %}">calendario</a></li>
+                    <li class=""><a href=""><i class="fa-brands fa-instagram fa-lg" style="color: #ffffff;"></i></a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </div>
+</header>

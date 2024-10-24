@@ -1,0 +1,10 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+
+    {% for service in services %}
+        <a href="{% url "service:details" service.id %}">{{ service.title }}</a>
+        <br>
+    {% endfor %}
+
+{% endblock content %}

@@ -4,25 +4,27 @@
 
 {% block content %}
 
-<img width="100%" src="{% static "global/images/imagem-principal.png" %}" alt="">
+<!-- Substituímos o <img> por um <div> para definir a imagem de fundo -->
+<div class="repeated-image"></div>
 
-<h4 class="text-center m-5">Lorem ipsum dolor sit amet. Sed obcaecati autem ut expedita ducimus et veritatis vero eum explicabo enim et porro labore.</h2>
+<h4 class="text-center m-5 text-dark">Lorem ipsum dolor sit amet. Sed obcaecati autem ut expedita ducimus et veritatis vero eum explicabo enim et porro labore.</h4>
 
 <div class="container">
-
     <div class="row d-flex justify-content-around">
-
         {% for service in services %}
-        
-            <div class="col-12 col-md-3 d-flex justify-content-center align-items-end m-5 service">
-                <img src="{% static 'global/images/foto-1.png' %}" alt="Background" class="bg-img">
+            <div class="col-12 col-md-3 d-flex justify-content-center align-items-center m-5 service">
+                {% if service.image %}
+                    <img src="{{ service.image.url }}" alt="{{ service.title }}" class="bg-img">
+                {% else %}
+                    <img src="{% static 'global/images/foto-1.png' %}" alt="Background" class="bg-img">
+                {% endif %}
                 <a href="{% url "service:details" service.id %}">
-                    <h3 class="py-2 px-5 mb-5">{{ service.title }}</h3>
+                    <h3 class="py-2 px-5">{{ service.title }}</h3>
                 </a>
             </div>
         {% endfor %}
     </div>
 </div>
-    
 
+{{service.title}}
 {% endblock content %}

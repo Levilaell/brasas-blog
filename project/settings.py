@@ -121,14 +121,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 # Arquivos estáticos (CSS, JS, etc.)
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'base_static')]  # Pasta estática local
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Diretório para onde os arquivos estáticos serão coletados
+STATIC_URL = '/static/' # acessados no navegador
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'base_static')] # onde o django vai procurar por arquivos estáticos
+STATIC_ROOT = BASE_DIR / 'staticfiles' # onde os arquivos estáticos serão reunidos no collectstatic
 
 
 # Arquivos de mídia (uploads de usuários)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Diretório de uploads local
+MEDIA_URL = '/media/' # url para acesso dos arquivos de mídia
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # onde os arquivos de mídia serão armazenados
 
 
 # Default primary key field type

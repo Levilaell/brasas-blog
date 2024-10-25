@@ -1,7 +1,23 @@
 {% extends "global/base.html" %}
+{% load static %}
 
 {% block content %}
 
-calendario
+<div class="container mt-5">
+    
+    <div class="row">
+
+        {% for event in events %}
+            <div class="my-3 text-dark">
+                <h1 class="my-3">{{ event.date|date:"d/m" }}: {{ event.name }}</h1>
+                <h3>Local: {{ event.location}}</h3>
+                <h3>{{ event.content }}</h3>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
 
 {% endblock content %}
+
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. In consequuntur temporibus impedit a aut iure nobis minima. Incidunt, assumenda itaque. Ex alias ad quia amet. Consequuntur, doloremque beatae? Animi, minima!

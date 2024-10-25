@@ -27,3 +27,9 @@ class Service(models.Model):
 
     def __str__(self):
         return self.title
+
+class Event(models.Model):
+    name = models.CharField(max_length=200)
+    date = models.DateField()
+    content = models.TextField(null=True)
+    location = models.CharField(max_length=200)

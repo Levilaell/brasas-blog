@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 
-from ..models import Service
+from ..models import Service, Event
 
 
 def index(request):
@@ -29,7 +29,13 @@ def about(request):
 
 def calendar(request):
 
-    return render(request, 'service/calendar.html')
+    events = Event.objects.order_by('-id')
+
+    context = {
+        'events': events,
+    }
+
+    return render(request, 'service/calendar.html', context)
 
 def services(request):
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Service
+from .models import Service, Event
 
 
 # Register your models here.
@@ -10,3 +10,8 @@ class ServiceAdmin(admin.ModelAdmin):
     list_filter = ('title', 'date')
     search_fields = ('title', 'date')
 
+@admin.register(Event)
+class EventAdmin(admin.ModelAdmin):
+    list_display = ('date', 'name')
+    list_filter = ('date', 'name')
+    search_fields = ('date', 'name')

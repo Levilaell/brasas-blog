@@ -4,11 +4,17 @@
 
 {% block content %}
 
-<!-- Substituímos o <img> por um <div> para definir a imagem de fundo -->
-<div class="repeated-image"></div>
+<div class="repeated-image d-flex justify-content-center align-items-center">
+    <h1 style="font-size: 100px; color: #e85030; background-color: white;" class="py-4 px-5">JNI BRASAS</h1>
+</div>
 
-<h4 class="text-center m-5 text-dark">Lorem ipsum dolor sit amet. Sed obcaecati autem ut expedita ducimus et veritatis vero eum explicabo enim et porro labore.</h4>
-
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="">
+            <h4 class="text-center m-5 text-dark font-3">Lorem ipsum dolor sit amet. Sed obcaecati autem ut expedita ducimus et veritatis vero eum explicabo enim et porro labore. Sed obcaecati autem ut expedita ducimus et veritatis vero eum explicabo enim</h4>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row d-flex justify-content-around">
         {% for service in services %}
@@ -26,5 +32,4 @@
     </div>
 </div>
 
-{{service.title}}
 {% endblock content %}

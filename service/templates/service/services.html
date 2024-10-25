@@ -1,10 +1,24 @@
 {% extends "global/base.html" %}
+{% load static %}
 
 {% block content %}
 
-    {% for service in services %}
-        <a href="{% url "service:details" service.id %}">{{ service.title }}</a>
-        <br>
-    {% endfor %}
+<div class="container">
+    <div class="row d-flex justify-content-around">
+        <h1 class="mt-5 text-dark">Cultos</h1>
+        {% for service in services %}
+            <div class="col-12 col-md-3 d-flex justify-content-center align-items-center service mt-5">
+                {% if service.image %}
+                    <img src="{{ service.image.url }}" alt="{{ service.title }}" class="bg-img">
+                {% else %}
+                    <img src="{% static 'global/images/foto-1.png' %}" alt="Background" class="bg-img">
+                {% endif %}
+                <a href="{% url "service:details" service.id %}">
+                    <h3 class="py-2 px-5">{{ service.title }}</h3>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock content %}

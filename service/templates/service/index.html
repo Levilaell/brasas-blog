@@ -5,7 +5,8 @@
 {% block content %}
 
 <div class="repeated-image d-flex justify-content-center align-items-center">
-    <h1 style="font-size: 100px; color: #e85030; background-color: white;" class="py-4 px-5">JNI BRASAS</h1>
+    <img src="{% static "global/images/brasas-camp.png" %}" class="d-none d-sm-block" alt="">
+    <img src="{% static "global/images/brasas-mobile.jpeg" %}" class="d-sm-none" alt="">
 </div>
 
 <div class="container">
@@ -15,10 +16,12 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row d-flex justify-content-around">
+
+
+<div class="container d-flex justify-content-center">
+    <div class="row d-flex justify-content-around m-auto">
         {% for service in services %}
-            <div class="col-12 col-md-3 d-flex justify-content-center align-items-center m-5 service">
+            <div class="col-xxl-3 col-lg-5 col-md-8 col-10 d-flex justify-content-center align-items-center my-3 m-md-5 service">
                 {% if service.image %}
                     <img src="{{ service.image.url }}" alt="{{ service.title }}" class="bg-img">
                 {% else %}

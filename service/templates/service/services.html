@@ -5,9 +5,9 @@
 
 <div class="container">
     <div class="row d-flex justify-content-around">
-        <h1 class="mt-5 text-dark">Cultos</h1>
+        <h1 class="mt-5 text-dark text-center text-md-start">Cultos</h1>
         {% for service in services %}
-            <div class="col-12 col-md-3 d-flex justify-content-center align-items-center service mt-5">
+            <div class="col-10 col-sm-4 col-md-4 d-flex justify-content-center align-items-center service m-3 my-5">
                 {% if service.image %}
                     <img src="{{ service.image.url }}" alt="{{ service.title }}" class="bg-img">
                 {% else %}

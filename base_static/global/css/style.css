@@ -72,12 +72,10 @@ li a {
   text-decoration: none;
 }
 
-.repeated-image {
-  background-image: url("/static/global/images/foto-bruno.png"); /* Caminho completo para o arquivo de imagem */
-  background-repeat: repeat-x; /* Repete apenas horizontalmente */
-  background-size: auto; /* Mantém o tamanho original da imagem sem redimensionar */
+.repeated-image img {
+  background-size: cover; /* Ou "contain" dependendo do efeito desejado */
   width: 100%; /* Ocupa toda a largura */
-  height: 500px; /* Defina a altura desejada para o elemento */
+  height: auto;
 }
 
 header {
@@ -124,4 +122,8 @@ nav ul li {
 footer {
   background-color: #e85030;
   color: white;
+}
+
+.text-white {
+  color: #ffffff !important;
 }
